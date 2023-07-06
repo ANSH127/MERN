@@ -27,7 +27,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
         // listen for requests
         app.listen(process.env.PORT, () => {
-            console.log(`Server started on port ${process.env.PORT}`)
+            console.log(`Connected to mongo & Server started on port ${process.env.PORT}`)
         });
 
     })
