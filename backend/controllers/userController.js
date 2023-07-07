@@ -8,7 +8,14 @@ const loginUser=async(req,res)=>{
 // signup user
 
 const signupUser=async(req,res)=>{
-    res.json({message:"signup user"})
+
+    const {email,password}=req.body
+    try{
+        const user=await User.signup(email,password)
+        res.status(201).json({user})
+    }catch(err){
+        res.status(400).json({message:err.message})
+    }
 }
 
 module.exports={loginUser,signupUser}

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 
 const userSchema = new mongoose.Schema({
@@ -13,6 +14,20 @@ const userSchema = new mongoose.Schema({
     }
 
 });
+
+// static signup method
+userSchema.statics.signup = async function(email, password) {
+    const exists=await this.findOne({email})
+    if(exists){
+        throw Error("Email already exists")
+    }
+    const salt = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(password, salt);
+    const user=await this.create({email,password:hashedPassword})
+    return user
+
+
+} 
 
 const User = mongoose.model('user', userSchema);
 
