@@ -47,9 +47,9 @@ export default function WorkoutForm() {
             <label htmlFor="title">Title</label>
             <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} />
             <label htmlFor="load">Load (Kg)</label>
-            <input type="text" id="load" value={load} onChange={(e) => setLoad(e.target.value)} />
+            <input type="number" id="load" value={load} onChange={(e) => setLoad(e.target.value)} />
             <label htmlFor="reps">Reps</label>
-            <input type="text" id="reps" value={reps} onChange={(e) => setReps(e.target.value)} />
+            <input type="number" id="reps" value={reps} onChange={(e) => setReps(e.target.value)} />
             <button type="submit">Add Workout</button>
             {error &&<div className="error">{error}</div> }
         </form>
