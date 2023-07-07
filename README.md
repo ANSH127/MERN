@@ -14,13 +14,13 @@ Clone the project
 
 Go to the project directory
 
-- Then go to backend directory and install dependicies using `npm install`
+- Then go to the backend directory and install dependencies using `npm install`
 
-- Create the `.env` file  in backend directory and make the variables listed below 
+- Create the `.env` file  in the backend directory and make the variables listed below 
 
 - run the server using `npm run dev`
 
-- Then go to frontend directory and install dependicies using `npm install`
+- Then go to the frontend directory and install dependencies using `npm install`
 
 - run the server using `npm start`
 
@@ -31,7 +31,7 @@ Go to the project directory
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file in backend folder
+To run this project, you will need to add the following environment variables to your .env file in the backend folder
 
 `PORT`
 
