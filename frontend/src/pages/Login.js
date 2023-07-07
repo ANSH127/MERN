@@ -1,12 +1,15 @@
 import React from 'react'
+import useLogin from '../hooks/useLogin'
 
 export default function Login() {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
+    const { login, error, loading } = useLogin();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-        console.log(email, password)
+        await login(email, password)
+
     }
     return (
         <form className="login" onSubmit={handleSubmit}>
@@ -25,7 +28,9 @@ export default function Login() {
                 value={password}
             />
 
-            <button>Log in</button>
+            <button disabled={loading} >Log in</button>
+            {loading && <p>Loading..</p>}
+            {error && <p className="error">{error}</p>}
         </form>
     )
 }
