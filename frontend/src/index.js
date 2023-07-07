@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { WorkoutProvider } from './context/WorkoutContext';
+import { AuthProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <WorkoutProvider>
-    <App />
-    </WorkoutProvider>
+    <AuthProvider>
+      <WorkoutProvider>
+        <App />
+      </WorkoutProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 
