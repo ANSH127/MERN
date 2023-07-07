@@ -9,9 +9,10 @@ export default function Home() {
 
   const fetchWorkouts = async () => {
     const res = await fetch('/api/workouts/')
+    
     const data = await res.json()
     if(res.ok) {
-      console.log(data)
+      // console.log(data)
       dispatch({type: 'SET_WORKOUTS', payload: data.workouts})
     }
 
