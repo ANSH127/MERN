@@ -1,8 +1,7 @@
 
 # MERN APP
 
-This is a MERN App
-
+This is a MERN stack app with authentication using JWT and Redux for state management
 
 ## Run Locally
 
